@@ -1,2 +1,9 @@
-
 tiny_guess/target/*
+hashmap/target/*
+ipenum/target/*
+lifetime_exp/target/*
+rectangle/target/*
+restaurant/target/*
+result/target/*
+trait_experiments/target/*
+vecs/target/*
