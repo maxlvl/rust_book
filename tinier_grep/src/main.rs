@@ -1,17 +1,19 @@
 use std::env;
-use std::fs;
+use std::process;
+
+use tinier_grep::Config;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    println!("Args are {:?}", args);
 
-    let query = &args[1];
-    let filename = &args[2];
+    let config = Config::new(&args).unwrap_or_else(|err| {
+        eprintln!("An error occurred: {}", err);
+        process::exit(1);
+    });
 
-    println!("Searching for {:?}", query);
-    println!("in file {:?}", filename);
+    if let Err(e) = tinier_grep::run(config) {
+        eprintln!("Application error: {}", e);
 
-    let contents: String = fs::read_to_string(filename).expect("Problem reading the file.");
-
-    println!("With text content:\n\n{}", contents)
+        process::exit(1);
+    }
 }
