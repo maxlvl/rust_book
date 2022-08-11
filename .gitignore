@@ -9,3 +9,4 @@ trait_experiments/target/*
 vecs/target/*
 test_exp/target/*
 tinier_grep/target/*
+closure_exp/target/*
