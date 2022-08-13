@@ -10,3 +10,6 @@ vecs/target/*
 test_exp/target/*
 tinier_grep/target/*
 closure_exp/target/*
+concurrency_exp/target/*
+channel_concurrency/target/*
+mutex_exp/target/*
